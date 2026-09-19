@@ -1,0 +1,27 @@
+server:
+  port: 8091
+
+# 线程池配置
+thread:
+  pool:
+    executor:
+      config:
+        core-pool-size: 20
+        max-pool-size: 50
+        keep-alive-time: 5000
+        block-queue-size: 5000
+        policy: CallerRunsPolicy
+
+# 数据库配置请通过环境变量或本地环境注入，不在仓库中保存真实凭据。
+# spring:
+#   datasource:
+#     username: ${DB_USERNAME:root}
+#     password: ${DB_PASSWORD:change_me}
+#     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:group_buy_market}?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC&useSSL=true
+#     driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
